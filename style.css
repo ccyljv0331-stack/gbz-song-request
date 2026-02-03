@@ -1,0 +1,287 @@
+/* 全局重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Microsoft YaHei", sans-serif;
+}
+
+/* 全局变量（方便后续修改主题） */
+:root {
+  --primary-color: #2c5282;
+  --secondary-color: #4299e1;
+  --light-color: #f7fafc;
+  --dark-color: #1a202c;
+  --gray-color: #718096;
+  --success-color: #38a169;
+  --danger-color: #e53e3e;
+  --border-radius: 8px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 页面主体 */
+body {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 容器（适配响应式） */
+.container {
+  width: 100%;
+  padding: 0 16px;
+  margin: 0 auto;
+  flex: 1;
+}
+
+/* 电脑端容器宽度限制 */
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+/* 头部样式 */
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 16px 0;
+  box-shadow: var(--shadow);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: var(--border-radius);
+  transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 卡片样式（通用，用于播放状态、点歌表单、点歌列表） */
+.card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: var(--primary-color);
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 8px;
+}
+
+/* 表单样式 */
+.form-group {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--gray-color);
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.2);
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-primary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-color);
+}
+
+.btn-success {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #2f855a;
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c53030;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* 列表样式 */
+.list {
+  list-style: none;
+}
+
+.list-item {
+  padding: 12px 0;
+  border-bottom: 1px solid #f7fafc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.list-item-content {
+  flex: 1;
+}
+
+.list-item-title {
+  font-weight: 500;
+}
+
+.list-item-subtitle {
+  font-size: 14px;
+  color: var(--gray-color);
+}
+
+.list-item-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* 播放状态样式 */
+.now-playing {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.now-playing-item {
+  font-size: 16px;
+}
+
+.now-playing-label {
+  color: var(--gray-color);
+  font-weight: 500;
+  display: inline-block;
+  width: 80px;
+}
+
+/* 页脚样式 */
+footer {
+  background-color: var(--dark-color);
+  color: white;
+  padding: 16px 0;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-content {
+  font-size: 14px;
+}
+
+/* 响应式调整（手机端优化） */
+@media (max-width: 767px) {
+  .header-content {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .card {
+    padding: 16px;
+    margin: 16px 0;
+  }
+
+  .list-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .list-item-actions {
+    align-self: flex-end;
+  }
+}
+
+/* 提示框样式 */
+.alert {
+  padding: 12px 16px;
+  border-radius: var(--border-radius);
+  margin: 16px 0;
+  font-size: 14px;
+}
+
+.alert-success {
+  background-color: rgba(56, 161, 105, 0.1);
+  color: var(--success-color);
+  border: 1px solid rgba(56, 161, 105, 0.2);
+}
+
+.alert-danger {
+  background-color: rgba(229, 62, 62, 0.1);
+  color: var(--danger-color);
+  border: 1px solid rgba(229, 62, 62, 0.2);
+}
+
+/* 管理员登录页面样式 */
+.login-card {
+  max-width: 400px;
+  margin: 40px auto;
+}
+
+/* 隐藏元素 */
+.hidden {
+  display: none;
+}

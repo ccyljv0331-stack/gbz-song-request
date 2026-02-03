@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>长沙新华校园广播站 - 在线点歌平台</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- 引入 Supabase 客户端 CDN（用于对接云端数据库） -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+</head>
+<body>
+  <!-- 头部 -->
+  <header>
+    <div class="container header-content">
+      <div class="logo">长沙新华校园广播站 在线点歌</div>
+      <nav>
+        <a href="admin.html" class="nav-link">管理员入口</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 主体内容 -->
+  <div class="container">
+    <!-- 当前播放音乐卡片 -->
+    <div class="card">
+      <h2 class="card-title">当前正在播放</h2>
+      <div class="now-playing">
+        <p class="now-playing-item">
+          <span class="now-playing-label">歌名：</span>
+          <span id="now-song-name">暂无播放音乐</span>
+        </p>
+        <p class="now-playing-item">
+          <span class="now-playing-label">歌手：</span>
+          <span id="now-singer">——</span>
+        </p>
+        <p class="now-playing-item">
+          <span class="now-playing-label">平台：</span>
+          <span id="now-platform">——</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- 点歌表单卡片 -->
+    <div class="card">
+      <h2 class="card-title">我要点歌</h2>
+      <form id="song-request-form">
+        <div class="form-group">
+          <label for="song-name">歌名 *</label>
+          <input type="text" id="song-name" placeholder="请输入歌曲名称" required>
+        </div>
+        <div class="form-group">
+          <label for="singer">歌手 *</label>
+          <input type="text" id="singer" placeholder="请输入歌手姓名/组合" required>
+        </div>
+        <div class="form-group">
+          <label for="platform">播放平台</label>
+          <select id="platform">
+            <option value="QQ音乐">QQ音乐</option>
+            <option value="网易云音乐">网易云音乐</option>
+            <option value="酷狗音乐">酷狗音乐</option>
+            <option value="其他">其他</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">提交点歌</button>
+      </form>
+    </div>
+
+    <!-- 已审核点歌列表卡片 -->
+    <div class="card">
+      <h2 class="card-title">已审核点歌记录</h2>
+      <ul class="list" id="song-list">
+        <li class="list-item">
+          <p class="list-item-content">暂无已审核的点歌记录</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <footer>
+    <div class="footer-content">
+      <p>© 2026 长沙新华校园广播站 - 在线点歌平台 | 本页面仅用于内部点歌同步</p>
+    </div>
+  </footer>
+
+  <!-- 引入脚本 -->
+  <script src="script.js"></script>
+</body>
+</html>

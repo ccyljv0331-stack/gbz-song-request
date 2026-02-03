@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新华广播站 - 管理员后台</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- 引入 Supabase 客户端 CDN（用于对接云端数据库） -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+</head>
+<body>
+  <!-- 头部 -->
+  <header>
+    <div class="container header-content">
+      <div class="logo">新华广播站 - 管理员后台</div>
+      <nav>
+        <a href="index.html" class="nav-link">返回点歌首页</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 主体内容 -->
+  <div class="container">
+    <!-- 管理员登录区域 -->
+    <div id="admin-login-section">
+      <div class="card login-card">
+        <h2 class="card-title">管理员登录</h2>
+        <form id="admin-login-form">
+          <div class="form-group">
+            <label for="admin-username">账户名</label>
+            <input type="text" id="admin-username" placeholder="请输入管理员账户" required>
+          </div>
+          <div class="form-group">
+            <label for="admin-password">密码</label>
+            <input type="password" id="admin-password" placeholder="请输入管理员密码" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">登录</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- 管理员操作区域（登录后显示） -->
+    <div id="admin-operation-section" class="hidden">
+      <!-- 编辑当前播放音乐 -->
+      <div class="card">
+        <h2 class="card-title">编辑当前播放音乐</h2>
+        <form id="now-playing-edit-form">
+          <div class="form-group">
+            <label for="edit-song-name">歌名 *</label>
+            <input type="text" id="edit-song-name" placeholder="请输入当前播放歌曲名称" required>
+          </div>
+          <div class="form-group">
+            <label for="edit-singer">歌手 *</label>
+            <input type="text" id="edit-singer" placeholder="请输入当前播放歌手姓名/组合" required>
+          </div>
+          <div class="form-group">
+            <label for="edit-platform">播放平台</label>
+            <select id="edit-platform">
+              <option value="QQ音乐">QQ音乐</option>
+              <option value="网易云音乐">网易云音乐</option>
+              <option value="酷狗音乐">酷狗音乐</option>
+              <option value="其他">其他</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">保存修改</button>
+        </form>
+      </div>
+
+      <!-- 点歌记录审核 -->
+      <div class="card">
+        <h2 class="card-title">点歌记录审核（所有提交）</h2>
+        <ul class="list" id="admin-song-list">
+          <li class="list-item">
+            <p class="list-item-content">暂无点歌记录</p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 登出按钮 -->
+      <button id="admin-logout-btn" class="btn btn-danger btn-block">管理员登出</button>
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <footer>
+    <div class="footer-content">
+      <p>© 2026 新华广播站 - 在线点歌平台 | 本页面仅用于内部管理员操作</p>
+    </div>
+  </footer>
+
+  <!-- 引入脚本 -->
+  <script src="script.js"></script>
+</body>
+</html>
