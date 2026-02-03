@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>新华广播站 - 管理员后台</title>
+  <title>长沙新华校园广播站 - 管理员后台</title>
   <link rel="stylesheet" href="style.css">
   <!-- 引入 Supabase 客户端 CDN（用于对接云端数据库） -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 </head>
 <body>
   <!-- 头部 -->
   <header>
     <div class="container header-content">
-      <div class="logo">新华广播站 - 管理员后台</div>
+      <div class="logo">长沙新华校园广播站 - 管理员后台</div>
       <nav>
         <a href="index.html" class="nav-link">返回点歌首页</a>
       </nav>
@@ -25,6 +25,7 @@
     <div id="admin-login-section">
       <div class="card login-card">
         <h2 class="card-title">管理员登录</h2>
+        <!-- 表单已添加唯一id，按钮保持type="submit" -->
         <form id="admin-login-form">
           <div class="form-group">
             <label for="admin-username">账户名</label>
@@ -84,7 +85,7 @@
   <!-- 页脚 -->
   <footer>
     <div class="footer-content">
-      <p>© 2026 新华广播站 - 在线点歌平台 | 本页面仅用于内部管理员操作</p>
+      <p>© 2026 长沙新华校园广播站 - 在线点歌平台 | 本页面仅用于内部管理员操作</p>
     </div>
   </footer>
 
